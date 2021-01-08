@@ -1,0 +1,412 @@
+\documentclass{beamer}
+\usepackage{listings}
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\usepackage{subcaption}
+\usepackage{setspace}
+\usepackage{url}
+\usepackage{tikz}
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+%\usetkzobj{all}
+\usetikzlibrary{calc,math}
+\usepackage{float}
+\newcommand\norm[1]{\left\lVert#1\right\rVert}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\usepackage[export]{adjustbox}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usetheme{Boadilla}
+\newcommand\mytextbullet{\leavevmode%
+\usebeamertemplate{itemize item}\hspace{.5em}}
+
+\bibliographystyle{IEEEtran}
+
+\usepackage{color}
+
+\title{A Calculation of Cricket Ball Trajectories}
+\author{B603 Research Team}
+\institute{Indian Institute of Technology, Hyderabad.}
+\date{\today}
+\begin{document}
+
+
+\begin{frame}
+\titlepage
+\end{frame}
+\section{Introduction}
+\begin{frame}
+\frametitle{Introduction}
+This article shows:\\
+\begin{columns}
+\column{1\textwidth}
+  \begin{itemize}
+  \item Constant force coefficient in sub-critical and super-critical Reynold number region.
+  \item The transition between this two region with variable gradient.
+  \item Approximate analysis of the trajectory equation which results very simple forms of trajectories.
+  \item From the approximate analysis, the governing parameters are also observed.
+  \item The effect of "No wind" and "Cross wind" on the trajectories of the cricket balls.
+  \end{itemize}
+\end{columns}
+
+\end{frame}
+
+
+\section{Literature Survey}
+\begin{frame}
+\frametitle{Literature Survey}
+\begin{columns}
+\column{1\textwidth}
+  \begin{itemize}
+  \item In [1-3], the authors have shown various forces on stationary balls with/without spin in wind tunnels of different types. So, \textbf{drag} and \textbf{side} forces are determined.
+  \item In [4], some major simplifications are done in trajectory measurement. The trajectories of balls are studied in presence of different aerodynamic force profile.
+  \item In [5], the trajectory of flying debris during extreme windstrom is calculated.
+  
+  \end{itemize}
+\end{columns}
+
+\end{frame}
+
+
+\section{Trajectory Equation}
+\begin{frame}
+\frametitle{Trajectory Equation}
+
+\begin{columns}
+\column{0.5\textwidth}
+  \begin{itemize}
+  \item The trajectory equation is derived from [5], where the author sets an equation for both compact debris and sheet debris.
+  \item For cricket balls, compact debris equation is used.
+  
+  
+  \end{itemize}
+%\end{columns}
+
+\column{0.5\textwidth}
+\begin{figure}[h!]
+  \centering
+  \begin{subfigure}[b]{0.6\linewidth}
+    \includegraphics[width=\linewidth]{./figs/my_1.png}
+%    \caption{Coffee.}
+  \end{subfigure}
+
+  \caption{Axis system, velocities, and forces}
+  \label{fig:axis}
+\end{figure}
+\end{columns}
+
+%\begin{columns}
+%\column{.5\textwidth}
+%  \begin{itemize}
+%  \item First item.
+%  \item Second item.
+%  \end{itemize}
+%\end{columns}
+
+\end{frame}
+
+\section{Trajectory Equation}
+\begin{frame}
+\frametitle{Trajectory Equation}
+The basic trajectory equation for cricket balls:\\
+\begin{columns}
+\column{1\textwidth}
+  \begin{itemize}
+  \item 
+  $\frac{du}{dt}=-[(\vec{u}-\vec{U})^2+(\vec{v}-\vec{V})^2+(\vec{w}-\vec{W})^2]^{0.5}(\vec{u}-\vec{U})C_D T$
+  
+  \item $\frac{dv}{dt}=-[(\vec{u}-\vec{U})^2+(\vec{v}-\vec{V})^2+(\vec{w}-\vec{W})^2]^{0.5}[-(\vec{v}-\vec{V})C_D T+(\vec{u}-\vec{U})C_S T]$
+  
+  \item $\frac{dw}{dt}=-[(\vec{u}-\vec{U})^2+(\vec{v}-\vec{V})^2+(\vec{w}-\vec{W})^2]^{0.5}(\vec{w}-\vec{W})C_D T - 1$
+  
+  \item Where, drag coeff. $C_D = \frac{D}{0.5A \rho Q^2}$ and side coeff. $C_S = \frac{S}{0.5A \rho Q^2}$ and $T$= Tachikawa number.
+%  \doublespacing
+%  
+%  \item Where, $D$ = Drag force, $S$ = Side force, $\rho$= density of air, $Q$=total relative velocity of ball with respect to air, $T$ = Tachikawa number.
+  
+  \end{itemize}
+\end{columns}
+
+%\begin{columns}
+%\column{.5\textwidth}
+%  \begin{itemize}
+%  \item First item.
+%  \item Second item.
+%  \end{itemize}
+%\end{columns}
+
+\end{frame}
+
+\section{Results of Past Experiments}
+\begin{frame}
+\frametitle{Results of Past Experiments}
+
+\begin{figure}[h!]
+  \centering
+  \begin{subfigure}[b]{0.4\linewidth}
+    \includegraphics[width=\linewidth]{./figs/my_2.png}
+    \caption{Smooth sphere/New Ball}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.4\linewidth}
+    \includegraphics[width=\linewidth]{./figs/my_3.png}
+    \caption{Rough Sphere/Old Ball}
+  \end{subfigure}
+  \caption{Compilation of cricket ball drag coefficient data}
+  \label{fig:drag1}
+\end{figure}
+\end{frame}
+
+\section{Results of Past Experiments}
+\begin{frame}
+\frametitle{Results of Past Experiments}
+
+\begin{figure}[h!]
+  \centering
+  \begin{subfigure}[b]{0.5\linewidth}
+    \includegraphics[width=\linewidth]{./figs/my_4.png}
+%    \caption{Coffee.}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.5\linewidth}
+    \includegraphics[width=\linewidth]{./figs/my_5.png}
+%    \caption{More coffee.}
+  \end{subfigure}
+  \caption{Compilation of side force coefficient data for
+smooth spheres/new balls.}
+  \label{fig:side1}
+\end{figure}
+\end{frame}
+
+\section{Results of Past Experiments}
+\begin{frame}
+\frametitle{Results of Past Experiments}
+
+\begin{figure}[h!]
+  \centering
+  \begin{subfigure}[b]{0.5\linewidth}
+    \includegraphics[width=\linewidth]{./figs/my_6.png}
+    \caption{for
+smooth spheres/new balls}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.5\linewidth}
+    \includegraphics[width=\linewidth]{./figs/my_7.png}
+    \caption{for semi-roughened spheres}
+  \end{subfigure}
+  \caption{side force coefficient data }
+  \label{fig:side2}
+\end{figure}
+\end{frame}
+
+\section{Results of Past Experiments}
+\begin{frame}
+\frametitle{Results of Past Experiments}
+
+\begin{figure}[h!]
+  \centering
+  \begin{subfigure}[b]{0.5\linewidth}
+    \includegraphics[width=\linewidth]{./figs/my_8.png}
+%    \caption{Coffee.}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.5\linewidth}
+    \includegraphics[width=\linewidth]{./figs/my_9.png}
+%    \caption{More coffee.}
+  \end{subfigure}
+  \caption{Force coefficient scenarios for trajectory calculations}
+  \label{fig:side3}
+\end{figure}
+\end{frame}
+
+\section{Approximate Solution}
+\begin{frame}
+\frametitle{Approximate Solution}
+
+\begin{figure}[h!]
+  \centering
+  \begin{subfigure}[b]{0.4\linewidth}
+    \includegraphics[width=\linewidth]{./figs/no_wind.png}
+    \caption{No wind case}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.4\linewidth}
+    \includegraphics[width=\linewidth]{./figs/cross_wind.png}
+    \caption{Cross wind case}
+  \end{subfigure}
+  \caption{Accuracy of approximate methods}
+  \label{fig:Accuracy of approximate methods}
+\end{figure}
+
+\begin{columns}
+\column{1\textwidth}
+  \begin{itemize}
+  \item \textbf{No wind case:} $\vec{U}=\vec{V}=\vec{W}=0$ and $C_D, C_S =$ constant,
+  $ \vec{y}=\frac{C_S T}{2} \vec{x}^2$
+  \item \textbf{Cross wind case:} $\vec{U}=\vec{W}=0$ and $\vec{V}\leq\vec{u}$ and 
+ $ \vec{y}=\frac{(C_S + C_D \vec{V}) T}{2} \vec{x}^2$
+  
+  \end{itemize}
+\end{columns}
+\end{frame}
+
+
+\section{Full Solution Trajectory Equation}
+\begin{frame} 
+\frametitle{Full Solution Trajectory Equation}
+
+\begin{figure}[h!]
+  \centering
+  \begin{subfigure}[b]{0.5\linewidth}
+    \includegraphics[width=\linewidth]{./figs/fs_1.png}
+%    \caption{Coffee.}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.5\linewidth}
+    \includegraphics[width=\linewidth]{./figs/fs_2.png}
+%    \caption{More coffee.}
+  \end{subfigure}
+  \caption{Trajectories for new ball/shallow transition sce-
+nario.}
+  \label{fig:fs12}
+\end{figure}
+\end{frame}
+
+\section{Full Solution Trajectory Equation}
+\begin{frame}
+\frametitle{Full Solution Trajectory Equation}
+
+\begin{figure}[h!]
+  \centering
+  \begin{subfigure}[b]{0.5\linewidth}
+    \includegraphics[width=\linewidth]{./figs/fs_3.png}
+%    \caption{Coffee.}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.5\linewidth}
+    \includegraphics[width=\linewidth]{./figs/fs_4.png}
+%    \caption{More coffee.}
+  \end{subfigure}
+  \caption{Trajectories for new ball/steep transition scenario.}
+  \label{fig:fs34}
+\end{figure}
+\end{frame}
+
+\section{Full Solution Trajectory Equation}
+\begin{frame}
+\frametitle{Full Solution Trajectory Equation}
+
+\begin{figure}[h!]
+  \centering
+  \begin{subfigure}[b]{0.5\linewidth}
+    \includegraphics[width=\linewidth]{./figs/fs_5.png}
+%    \caption{Coffee.}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.5\linewidth}
+    \includegraphics[width=\linewidth]{./figs/fs_6.png}
+%    \caption{More coffee.}
+  \end{subfigure}
+  \caption{Trajectories for old ball/shallow transition sce-
+nario.}
+  \label{fig:fs56}
+\end{figure}
+\end{frame}
+
+\section{Full Solution Trajectory Equation}
+\begin{frame}
+\frametitle{Full Solution Trajectory Equation}
+
+\begin{figure}[h!]
+  \centering
+  \begin{subfigure}[b]{0.5\linewidth}
+    \includegraphics[width=\linewidth]{./figs/fs_9.png}
+%    \caption{Coffee.}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.5\linewidth}
+    \includegraphics[width=\linewidth]{./figs/fs_8.png}
+%    \caption{More coffee.}
+  \end{subfigure}
+  \caption{Trajectories for old ball/steep transition sce-
+nario.}
+  \label{fig:fs89}
+\end{figure}
+\end{frame}
+
+
+\section{Conclusion}
+\begin{frame}
+\frametitle{Conclusion}
+\begin{columns}
+\column{1\textwidth}
+  \begin{itemize}
+  \item In trajectory equation, the main governing parameters are $C_D$, $C_S$ and $T$.
+  \item The drag and side forces are reasonable constant in the sub and super crical Re number region.
+  \item The supercritical values of the side force coefficient are in general zero for new balls, and less than zero for old balls.
+  \item The approximate analysis of the trajectory equations shows that, for constant drag and side force coefficients, the trajectories take on a simple parabolic form.
+  \item A full solution of the trajectory equations enables the trajectories to be calculated for all bowling speeds for different types of ball.
+  \end{itemize}
+\end{columns}
+
+\end{frame}
+
+%\begin{frame}
+%
+%\begin{columns}
+%\column{.5\textwidth}
+%  \begin{itemize}
+%  \item First item.
+%  \item Second item.
+%  \item Third item.
+%  \end{itemize}
+%\setbeamertemplate{itemize items}[square]
+%  \begin{itemize}
+%  \item First item.
+%  \item Second item.
+%  \item Third item.
+%  \end{itemize}
+%\column{.5\textwidth}
+%\setbeamertemplate{itemize items}[circle]
+%  \begin{itemize}
+%  \item First item.
+%  \item Second item.
+%  \item Third item.
+%  \end{itemize}
+%\setbeamertemplate{itemize items}[ball]
+%  \begin{itemize}
+%  \item First item.
+%  \item Second item.
+%  \item Third item.
+%  \end{itemize}
+%\end{columns}
+%
+%\end{frame}
+
+
+\begin{frame}
+\frametitle{Reference}
+\begin{columns}
+\column{1\textwidth}
+  
+\setbeamertemplate{itemize items}[square]
+  \begin{itemize}
+  \item [1]Mehta, R. D. Aerodynamics of sports balls. Annu. Rev.
+Fluid Mech., 1985, 17, 151–189.
+  \item [2]Mehta, R. D. Cricket ball aerodynamics: myth versus sci-
+ence. In The engineering of sport – research, development
+and innovation (Eds A. J. Subic and S. J. Haake), 2000,
+pp. 153–167 (Blackwell Science, London).
+  \item [3]Mehta, R. D. A review of cricket ball swing. Sports Eng.,
+2005, 8, 181–192.
+  \item [4]Bentley, K., Varty, P., Proudlove, M., and Mehta, R. D. An
+experimental study of cricket ball swing. Imperial College
+Aero Technical Note, 1982, pp. 82–106.
+  \item [5] Baker, C. J. The debris flight equations. J. Wind Eng. Ind.
+Aerodyn., 2007, 95(5), 329–353.
+  \end{itemize}
+
+\end{columns}
+
+\end{frame}
+
+
+\newpage
+\bibliography{ref}
+
+\end{document}
+
